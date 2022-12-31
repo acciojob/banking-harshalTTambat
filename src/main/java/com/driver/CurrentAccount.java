@@ -3,14 +3,12 @@ package com.driver;
 public class CurrentAccount extends BankAccount{
     String tradeLicenseId;        //consists of Uppercase English characters only
     public CurrentAccount(String name, double balance, String tradeLicenseId) throws Exception {
-        super(name, balance, 5000);
+        super(name, balance,5000.00 );
         //If balance is less than 5000, throw "Insufficient Balance" exception
         if(getBalance() < getMinBalance()) {
             throw new Exception("Insufficient Balance");
         }
         this.tradeLicenseId = tradeLicenseId;
-        validateLicenseId();
-        BankAccount new_curr_acc = new CurrentAccount(getName(),getBalance(),this.tradeLicenseId);
     }
     public void validateLicenseId() throws Exception {
         // A trade license Id is said to be valid if no two consecutive characters are same
