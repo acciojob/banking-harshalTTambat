@@ -3,7 +3,8 @@ package com.driver;
 public class CurrentAccount extends BankAccount{
     String tradeLicenseId;        //consists of Uppercase English characters only
     public CurrentAccount(String name, double balance, String tradeLicenseId) throws Exception {
-        super(name, balance,5000.00 );
+        super(name,balance,5000.00);
+
         //If balance is less than 5000, throw "Insufficient Balance" exception
         if(getBalance() < getMinBalance()) {
             throw new Exception("Insufficient Balance");
