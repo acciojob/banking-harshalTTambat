@@ -18,9 +18,16 @@ public class CurrentAccount extends BankAccount{
         // If it is not possible, throw "Valid License can not be generated" Exception
         int n = this.tradeLicenseId.length();
         String result = rearrangeString(this.tradeLicenseId);
-        if (result == "")
+        if (result.equals(""))
+        {
             throw new Exception("Valid License can not be generated");
-        this.tradeLicenseId = result;
+        }
+        else
+        {
+            tradeLicenseId = result;
+            System.out.println("current Account created..");
+        }
+
     }
     public String rearrangeString(String S)
     {
